@@ -38,6 +38,16 @@ body {
 
 .topbarRight {
 	float: right;
+	
+}
+
+.topSearch {
+	position: absolute;
+	top: 15px;
+	left: 1400px;
+	/* background-color: black; */
+	width: 250px;
+	height: auto; 
 }
 
 .slideshowBox{
@@ -120,7 +130,7 @@ body {
 	height: 300px;
 	min-height: 100%;
 	clear: both;
-	background-color: red;
+	/* background-color: red; */
 }
 
 .paraJustify{
@@ -140,20 +150,23 @@ body {
 
 .buyTickets{
 	
-	background-color: green;
+	/* background-color: green; */
 	height: 800px;
 }
 
 .cardColumn{
-	background-color: purple;
+	/* background-color: purple; */
 	float: left;
-	width: 32%;
+	width: 20%;
+	height: 450px;
 	margin-bottom: 20px;
-	padding: 0 8px;
+	margin-right: 20px;
+	margin-left: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cardContainer{
-	background-color: blue;
+	/* background-color: blue; */
 	padding: 0 16px;
 }
 
@@ -161,6 +174,15 @@ body {
 	content: "";
 	clear: both;
 	display: table;
+}
+
+.cardButton{
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	width: 120px;
+	height: 40px;
 }
 
 .footer {
@@ -182,6 +204,12 @@ body {
 	content: "";
 	display: table;
 	clear: both;
+}
+
+.rowTicket{
+	/* background-color: black; */
+	position: absolute;
+	left: 180px;
 }
 
 .fa {
@@ -210,6 +238,17 @@ body {
   width: 50px;
   height: 30px;
   padding: 10px;
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
 }
 
 a {
