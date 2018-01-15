@@ -61,31 +61,31 @@
 				<a href="">Sign Up</a>
 			</div>
 			
-			
-			
 		</div>
 		
 		<div class = "slideshowBox">
 			<div class = "slides fade">
 					<img src = "slideshowImage/img1.jpg" style = "width:100%">
-					<div class = "imageCaption">Ugandan Knuckles</div>
+					<!-- <div class = "imageCaption">Party</div> -->
 			</div>
 			
 			<div class = "slides fade">
 					<img src = "slideshowImage/img2.jpg" style = "width:100%">
-					<div class = "imageCaption">Ugandan Knuckles 2</div>
+					<!-- <div class = "imageCaption">Ugandan Knuckles 2</div> -->
 			</div>
 			
 			<div class = "slides fade">
 					<img src = "slideshowImage/img3.jpg" style = "width:100%">
-					<div class = "imageCaption">Mans not hot</div>
+					<!-- <div class = "imageCaption">Mans not hot</div> -->
 			</div>
 			
 			<a class = "prev" onclick="plusSlides(-1)"> &#10094;</a>
 			<a class = "next" onclick="plusSlides(1)"> &#10095;</a>
+			
 		</div>
 
 		<div style = "text-align: center">
+			<br>
 			<span class = "dot" onClick="currentSlide(1)"></span>
 			<span class = "dot" onClick="currentSlide(2)"></span>
 			<span class = "dot" onClick="currentSlide(3)"></span>
@@ -107,7 +107,31 @@
 						<h2>Dance Party in KL</h2>
 						<p>Fri 12 Dec 2018</p>
 						<p>The dance revolution that you need!</p>
-						<p><button class = "cardButton">Buy Now</button></p>
+						<p>
+						<button onclick = "document.getElementById('ticket01').style.display='block'" class = "cardButton">Buy Now</button>
+						</p>
+						
+						<div id = "ticket01" class = "modal">
+							<span onclick="document.getElementById('ticket01').style.display='none'" class="close" title="Close Modal">&#10006;</span>
+							<form action = "" class = "modal-content">
+								<div class = "buyTicketContainer">
+									<h1>Dance Party in KL</h1>
+									<p> Price ( RM #price)</p>
+									
+									<label><b>Number of Tickets</b></label>
+									<br>
+									<input name = "numTickets" type = "number" min = 0 style = "width: 50%;"/>
+									<br>
+									<hr>
+									<label style = "margin-left: 360px"><b>Total Price</b></label>
+									<p style = "margin-left: 360px">#price</p>
+									<div class = "clearfix">
+										<button type = "submit" class = "modalBtn submitBtn">Order</button>	
+									</div>
+								
+								</div>
+							</form>
+						</div>
 					</div>
 				
 				</div>
