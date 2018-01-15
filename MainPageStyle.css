@@ -1,0 +1,237 @@
+body {
+	font-family: Montserrat;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	
+}
+
+#container{
+	min-height: 100%;
+	position: relative;
+}
+
+.topbar {
+	overflow: hidden;
+	background-color: #33ccff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.topbar a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+}
+
+.topbar a:hover {
+	background: #0099cc;
+	color: black;
+		
+}
+
+.topbarRight {
+	float: right;
+}
+
+.slideshowBox{
+	max-width: 800px;
+	height: 500px;
+	postion: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background: grey;
+}
+
+.slides{
+	display: none;
+	position: relative;
+	left: 200px;
+	bottom: -100px;
+	height: 50%;
+	width: 50%;
+	background: red;
+}
+
+.imageCaption{
+	color: white;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: relative;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	background: rgba(0, 0,0, 0.3);
+	
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6 ease;
+}
+
+.prev, .next{
+	cursor: pointer;
+	position: relative;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 20px;
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+	transition: 0.6 ease;
+	border-radius: 0 3px 3px 0;
+	background: rgba(0, 0,0, 0.3);
+}
+
+.next {
+	left: 684px;
+}
+
+.prev {
+	left: 0;
+}
+
+.prev:hover, .next:hover {
+	background: white;
+}
+
+.active, .dot:hover{
+	background: #717171;
+}
+
+.productInfo {
+	text-align: center;
+	margin: 0 auto;
+	height: 300px;
+	min-height: 100%;
+	clear: both;
+	background-color: red;
+}
+
+.paraJustify{
+	
+	position: absolute;
+	text-align: justify;
+	width: 50%;
+	right: 500px;
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duraton: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+.buyTickets{
+	
+	background-color: green;
+	height: 800px;
+}
+
+.cardColumn{
+	background-color: purple;
+	float: left;
+	width: 32%;
+	margin-bottom: 20px;
+	padding: 0 8px;
+}
+
+.cardContainer{
+	background-color: blue;
+	padding: 0 16px;
+}
+
+.cardContainer::after, .row::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	clear: both;
+	background-color: #efefef;
+}
+
+.column {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center; 
+}
+.fa-facebook {
+  color:black;
+  width: 50px;
+  height: 30px;
+  padding: 10px;
+}
+
+.fa-twitter {
+  color:black;
+  width: 50px;
+  height: 30px;
+  padding: 10px;
+  
+}
+
+.fa-instagram {
+  color:black;
+  width: 50px;
+  height: 30px;
+  padding: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	marign: 0;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@font-face {
+	font-family: 'Montserrat', sans-serif;
+}

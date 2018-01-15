@@ -1,0 +1,57 @@
+.container{
+	background-color: #f1f1f1;
+	width: 50%;
+	height: 410px;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 5px;
+	
+}
+
+.containerHeader{
+	background-color: grey;
+	text-align: center;
+	color: white;
+	font-size: 30px;
+	margin: 0px 0px 20px 0px;
+
+}
+
+.floatRight{
+	float:right;
+	margin: 0 10px 0 10px;
+	font-size: 20px;
+}
+
+.floatLeft{
+	float:left;
+	margin: 0 10px 0 10px;
+	font-size: 20px;
+}
+
+.orderNowButton{
+	border: none;
+	color: white;
+	cursor: pointer;
+	background-color: #0074D9;
+	text-align: center;
+	font-size: 30px;
+	float: right;
+	position: relative;
+	top: 300px;
+	left: 340px;
+}
+
+.orderNowButton:hover{
+	background-color: #7FDBFF;
+}
+
+.orderNowButton:active{
+	background-color: #0074D9;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	marign: 0;
+}
