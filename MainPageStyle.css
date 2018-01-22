@@ -1,9 +1,15 @@
 body {
+	min-height: 100%;
 	font-family: Montserrat;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 #container{
@@ -11,13 +17,17 @@ body {
 	position: relative;
 }
 
+.parent{
+	width: 100px;
+}
+
 .topbar {
-	
 	overflow: hidden;
 	background-color: #33ccff;
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 4;
 }
 
 .topbar a {
@@ -29,6 +39,7 @@ body {
 	text-decoration: none;
 	color: black;
 	font-size: 20px;
+	
 }
 
 .topbar a:hover {
@@ -53,6 +64,7 @@ body {
 
 .slideshowBox{
 	max-width: 2000px;
+	width: 100%;
 	position: relative;
 	top: 52px;
 }
@@ -61,16 +73,6 @@ body {
 	display: none;
 }
 
-.imageCaption{
-	color: white;
-	font-size: 15px;
-	padding: 8px 12px;
-	position: relative;
-	bottom: 20px;
-	width: 100%;
-	text-align: center;
-	background: rgba(0, 0,0, 0.3);
-}
 
 .dot {
 	cursor: pointer;
@@ -83,10 +85,17 @@ body {
 	transition: background-color 0.6 ease;
 }
 
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.buttonRow{
+	position: relative;
+	background: red;
+}
 .prev, .next{
 	cursor: pointer;
-	position: relative;
-	/* top: 20%; */
+	position: absolute;
 	width: auto;
 	/* margin-top: -22px; */
 	padding: 20px;
@@ -98,14 +107,15 @@ body {
 	background: rgba(0, 0,0, 0.3);
 }
 
-.next { 
-	left: 1300px;
-	top: 13px;
- } 
+.next {
+	/* margin: auto 0; */
+	left: 95%;
+	/* top: 17px; */
+} 
 
 .prev {
-	left: 554px;
-	top: 13px;
+	/* left: 554px; */
+	/* top: 13px; */
 }
 
 .prev:hover, .next:hover {
@@ -117,21 +127,13 @@ body {
 }
 
 .productInfo {
-	text-align: center;
-	margin-top: 100px;
-	/* margin: 0 auto; */
-	height: 300px;
+	position: relative;
+	text-align: justify;
+	margin: 100px auto;
+	height: auto;
 	min-height: 100%;
 	clear: both;
-	/* background-color: red; */
-}
-
-.paraJustify{
-	
-	position: absolute;
-	text-align: justify;
 	width: 50%;
-	right: 500px;
 }
 
 .fade {
@@ -142,25 +144,25 @@ body {
 }
 
 .buyTickets{
-	
 	/* background-color: green; */
 	height: 800px;
+	min-height: 100%;
+	width: 100%;
 }
 
 .cardColumn{
-	/* background-color: purple; */
+	background-color: white;
 	float: left;
-	width: 20%;
+	width: 300px;
 	height: 450px;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	margin-left: 20px;
+	margin: 20px 20px 20px 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cardContainer{
 	/* background-color: blue; */
 	padding: 0 16px;
+	overflow: hidden;
 }
 
 .cardContainer::after, .row::after{
@@ -180,12 +182,13 @@ body {
 
 .buyTicketContainer{
 	padding: 16px;
+
 }
 
 .modal{
 	display: none; 
 	position: fixed; 
-	z-index: 1; 
+	z-index: 5; 
 	left: 0;
 	top: 0;
 	width: 100%; 
@@ -222,17 +225,13 @@ body {
 	color: white;
 	padding: 15px;
 	margin-left: 360px;
-}
-
-.submitBtn{
 	background-color: black;
 }
 
-.submitBtn:active{
-	background-color: #f1f1f1;
+.modalBtn:active{
+	/* background-color: #f1f1f1; */
 	color: black;
 }
-
 
 .clearfix::after {
   content: "";
@@ -241,7 +240,8 @@ body {
 }
 
 .footer {
-	position: absolute;
+	min-height: 100%;
+	position: relative;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -261,12 +261,45 @@ body {
 	clear: both;
 }
 
-.rowTicket{
-	/* background-color: black; */
+.rowTicket{	
+	background-color: #d8d2d2;
 	position: absolute;
-	left: 180px;
+	width: 100%;
+	/* left: 180px; */
+	/* box-shadow: inset 0 0 10px #000000; */
 }
 
+.cardImage{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 200px;
+	background-color: skyblue;
+	overflow: hidden;
+}
+
+.cardImage img{
+	display: block;
+	position: absolute;
+	max-height: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	width: auto;
+	top: 0;
+}
+
+.cardTitle{
+	/* color: red; */
+	/* background-color: blue; */
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
 .fa {
   padding: 20px;
   font-size: 30px;
