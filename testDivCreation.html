@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	
+		<link rel ="stylesheet" type="text/css" href="test.css"/>
+		
+		<script>
+		
+			function createBox(){
+				var div = document.createElement("div");
+				div.style.width = "100px";
+				div.style.height = "100px";
+				div.style.background = "red";
+				div.innerHTML = "Hello";
+				return div;
+			}
+		
+		
+		</script>
+		
+	</head>
+
+	<body>
+		<script>
+			
+			for (x=0; x < 9; x++){
+				document.body.appendChild(createBox());
+			}
+		</script>
+		<div id = "main">
+			<div class = "redBox"></div>
+		
+			<div class = "greenBox"></div>
+		
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,9 @@
+/* login.css */
+
+a    	    { text-decoration: none; }
+a:hover	    { text-decoration: underline; }
+body		{ font-family: tahoma, helvetica, sans-serif; }
+div         { }
+.box        { border-style: solid;
+              border-width: thin; }
+p           { font-size: 12px;}
