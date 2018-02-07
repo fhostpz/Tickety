@@ -12,6 +12,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		
 		<script type = "text/javascript">
+			var dance = "Dance Paty Boi";
 			var slideIndex = 1;
 			showSlides(slideIndex);
 		
@@ -105,7 +106,13 @@
 					
 					<div class = "cardContainer">
 						<div class = "cardTitle">
-							<p>Dance Party in KL</p>
+							<!-- <p>Dance Party in KL</p> -->
+							<p>
+								<script>
+									document.write(dance);
+								</script>
+							</p>
+							
 						</div>
 						<hr>
 						<p>Fri 12 Dec 2018</p>
@@ -138,6 +145,7 @@
 					</div>
 				
 				</div>
+				
 				<div class = "cardColumn">
 					<div class = "cardImage">
 						<img src = "eventLocation/img2.jpg" alt = "Putrajaya" style = "width: 60%">
@@ -150,7 +158,29 @@
 							<hr>
 							<p>Sat 13 Dec 2018</p>
 							<p>What's better than Food? Food in trucks!</p>
-							<p><button class = "cardButton">Buy Now</button></p>
+							<p><button class = "cardButton" onclick = "document.getElementById('ticket02').style.display='block'" class = "cardButton">Buy Now</button></p>
+							
+							<div id = "ticket02" class = "modal">
+							<span onclick="document.getElementById('ticket02').style.display='none'" class="close" title="Close Modal">&#10006;</span>
+							<form action = "" class = "modal-content">
+								<div class = "buyTicketContainer">
+									<h1>Food Trucks in Putrajaya</h1>
+									<p> Price ( RM #price)</p>
+									
+									<label><b>Number of Tickets</b></label>
+									<br>
+									<input name = "numTickets" type = "number" min = 0 style = "width: 50%;"/>
+									<br>
+									<hr>
+									<label style = "margin-left: 360px"><b>Total Price</b></label>
+									<p style = "margin-left: 360px">#price</p>
+									<div class = "clearfix">
+										<button type = "submit" class = "modalBtn submitBtn">Order</button>	
+									</div>
+								
+								</div>
+							</form>
+						</div>
 						</div>
 				</div>
 				<div class = "cardColumn">
@@ -163,7 +193,29 @@
 							<hr>
 							<p>Sun 14 Dec 2018</p>
 							<p>What the fuck is this. WHAT THE FUCK IS THIS!</p>
-							<p><button class = "cardButton">Buy Now</button></p>
+							<p><button class = "cardButton" onclick = "document.getElementById('ticket03').style.display='block'" class = "cardButton">Buy Now</button></p>
+							
+							<div id = "ticket03" class = "modal">
+							<span onclick="document.getElementById('ticket03').style.display='none'" class="close" title="Close Modal">&#10006;</span>
+							<form action = "" class = "modal-content">
+								<div class = "buyTicketContainer">
+									<h1>Traffic Jam in Singapore</h1>
+									<p> Price ( RM #price)</p>
+									
+									<label><b>Number of Tickets</b></label>
+									<br>
+									<input name = "numTickets" type = "number" min = 0 style = "width: 50%;"/>
+									<br>
+									<hr>
+									<label style = "margin-left: 360px"><b>Total Price</b></label>
+									<p style = "margin-left: 360px">#price</p>
+									<div class = "clearfix">
+										<button type = "submit" class = "modalBtn submitBtn">Order</button>	
+									</div>
+								
+								</div>
+							</form>
+						</div>
 						</div>
 				</div>
 				<div class = "cardColumn">
@@ -176,7 +228,30 @@
 							<hr>
 							<p>Sun 14 Dec 2018</p>
 							<p>What the fuck is this. WHAT THE FUCK IS THIS!</p>
-							<p><button class = "cardButton">Buy Now</button></p>
+							<p><button class = "cardButton" onclick = "document.getElementById('ticket03').style.display='block'" class = "cardButton">Buy Now</button></p>
+							
+							<div id = "ticket03" class = "modal">
+							<span onclick="document.getElementById('ticket03').style.display='none'" class="close" title="Close Modal">&#10006;</span>
+							<form action = "" class = "modal-content">
+								<div class = "buyTicketContainer">
+									<h1>Traffic Jam in Singapore</h1>
+									<p> Price ( RM #price)</p>
+									
+									<label><b>Number of Tickets</b></label>
+									<br>
+									<input name = "numTickets" type = "number" min = 0 style = "width: 50%;"/>
+									<br>
+									<hr>
+									<label style = "margin-left: 360px"><b>Total Price</b></label>
+									<p style = "margin-left: 360px">#price</p>
+									<div class = "clearfix">
+										<button type = "submit" class = "modalBtn submitBtn">Order</button>	
+									</div>
+								
+								</div>
+							</form>
+						</div>
+							
 						</div>
 				</div>
 			</div>
@@ -205,7 +280,7 @@
 						<li><a href="#" class="fa fa-twitter"></a></li>
 						<li><a href="#" class="fa fa-instagram"></a></li>
 					</ul>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</body>
