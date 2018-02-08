@@ -8,3 +8,8 @@ An event management website
 ### 02/04-1333-faisal
 - improved styling for the login.html
 - added minimal error handling to login.php
+
+### 02/08-2101-mig
+- event page, pics, and back end
+- requires login session to implement ticket purchase
+- sql file included, may need additional table later on, to record purchase
