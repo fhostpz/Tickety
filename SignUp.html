@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<link rel="stylesheet" href="SignUp.css" type="text/css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<script type="text/javascript">
+    
+	function check() {
+       var pass1=document.getElementById("password").value;
+	   var pass2=document.getElementById("confirm_password").value;
+	   
+        if ((pass1 == pass2)&&(pass1!=""&&pass2!="")) {
+			alert("Password Correct");
+        }
+		if((pass1!=pass2)&&(pass1!=""&&pass2!="")){
+			alert("Password not matched");
+		}
+     
+    }
+	
+
+   
+</script>
+	
+
+	
+</head>
+<body>
+
+<div id = "container">
+		
+		<div class="topbar">
+			<a href="#logo">Logo</a>
+			<a href="">Events</a>
+			<a href="">About Us</a>
+			
+			<div class = "topSearch">
+				<input type = "text" name = "search" placeholder = "Search...">
+			</div>
+			
+			<div class = "topbarRight">
+				<a href="">Login</a>
+				<a href="">Sign Up</a>
+			</div>
+					
+		</div>
+	
+	<div class="center">
+		<h2>Join Now!</h2>
+		<form class="sign up" method="post" action="SignUp.php">
+		<p><h3>Name:<br>
+			<input type="text" name="name" size="10" class="inputBox" required></h3></p>
+		
+		<p><h3>Gender:<br>
+			<h4>Male:<input type="radio" name="gender"  value="m" style="margin-right:20px;">
+			 Female:<input type="radio" name="gender" value="f"></h4></h3></p>
+		
+		<p><h3>Email:<br>			
+		<input type="email" name="email" class="inputBox" required></h3></p>
+		
+		<p><h3>Password:<br>
+			<input type="password" id="password" name="password" maxlength="10" class="inputBox" required></h3></p>
+		
+		<p><h3>Confirm Password:<br>
+		<input type="password" id="confirm_password" name="confirm_password" maxlength="10" class="inputBox" required></h3></p>
+		
+		
+		<input class="sButton" type="submit" value="submit" onclick="check()">
+	
+		</form>
+		
+		
+			
+	</div>
+	
+</div>
+</body>
+</html>

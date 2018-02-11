@@ -12,10 +12,9 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		
 		<script type = "text/javascript">
-			var dance = "Dance Paty Boi";
 			var slideIndex = 1;
 			showSlides(slideIndex);
-		
+
 			// Next/previous controls
 			function plusSlides(n) {
 			  showSlides(slideIndex += n);
@@ -32,7 +31,7 @@
 			  var dots = document.getElementsByClassName("dot");
 			  if (n > slides.length) {slideIndex = 1} 
 			  if (n < 1) {slideIndex = slides.length}
-			  for (i = 0; i < slides.length; i++) {	
+			  for (i = 0; i < slides.length; i++) {
 				  slides[i].style.display = "none"; 
 			  }
 			  for (i = 0; i < dots.length; i++) {
@@ -41,14 +40,14 @@
 			  slides[slideIndex-1].style.display = "block"; 
 			  dots[slideIndex-1].className += " active";
 			}
-			
 		
 		</script>
 	</head>
 	
-	<body onload="showSlides(1);">
+	<body>
+		<div id = "container">
 		
-		<div class = "topbar">
+		<div class="topbar">
 			<a href="#logo">Logo</a>
 			<a href="">Events</a>
 			<a href="">About Us</a>
@@ -62,134 +61,87 @@
 				<a href="">Sign Up</a>
 			</div>
 			
+			
+			
 		</div>
 		
 		<div class = "slideshowBox">
 			<div class = "slides fade">
-					<img class = "parent" src = "slideshowImage/img1.jpg" style = "width:100%;">
+					<img src = "slideshowImage/img1.jpg" style = "width:100%">
+					<div class = "imageCaption">Ugandan Knuckles</div>
 			</div>
 			
 			<div class = "slides fade">
-					<img class = "parent" src = "slideshowImage/img2.jpg" style = "width:100%;">
+					<img src = "slideshowImage/img2.jpg" style = "width:100%">
+					<div class = "imageCaption">Ugandan Knuckles 2</div>
 			</div>
 			
 			<div class = "slides fade">
-					<img class = "parent" src = "slideshowImage/img3.jpg" style = "width:100%;">
+					<img src = "slideshowImage/img3.jpg" style = "width:100%">
+					<div class = "imageCaption">Mans not hot</div>
 			</div>
 			
-			<div class = "buttonRow">
-				<a class = "prev" onclick="plusSlides(-1)"> &#10094;</a>
-				<a class = "next" onclick="plusSlides(1)"> &#10095;</a>
-			
-			</div>
+			<a class = "prev" onclick="plusSlides(-1)"> &#10094;</a>
+			<a class = "next" onclick="plusSlides(1)"> &#10095;</a>
 		</div>
 
 		<div style = "text-align: center">
-			<br>
 			<span class = "dot" onClick="currentSlide(1)"></span>
 			<span class = "dot" onClick="currentSlide(2)"></span>
 			<span class = "dot" onClick="currentSlide(3)"></span>
 		</div>
 		
 		<div class = "productInfo">
-				<h1 style = "text-align: center;">Tickety</h1>
+				<h1>Tickety</h1>
+				<p class = "paraJustify">
 				Tickety is your one stop solution to all your event management problems! What you don't like it? What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You’re fucking dead, kid. I can be anywhere, anytime,
+				</p>
 		</div>
 	
 		<div class = "buyTickets">
 			<h1 style = "text-align: center;">Tickets Available</h1>
 			<div class = "rowTicket">
 				<div class = "cardColumn">
-					<div class = "cardImage">
-						<img class = "imageCard" src = "eventLocation/img1.jpg" alt = "KL" style = "width: 60%">
-					</div>
-					
+					<img src = "eventLocation/img1.jpg" alt = "KL" style = "width: 60%">
 					<div class = "cardContainer">
-						<div class = "cardTitle">
-							<!-- <p>Dance Party in KL</p> -->
-							<p>
-								<script>
-									document.write(dance);
-								</script>
-							</p>
-							
-						</div>
-						<hr>
+						<h2>Dance Party in KL</h2>
 						<p>Fri 12 Dec 2018</p>
 						<p>The dance revolution that you need!</p>
-						<p>
-						<button onclick = "document.getElementById('ticket01').style.display='block'" class = "cardButton">Buy Now</button>
-						</p>
-						
-						<div id = "ticket01" class = "modal">
-							<span onclick="document.getElementById('ticket01').style.display='none'" class="close" title="Close Modal">&#10006;</span>
-							<form action = "" class = "modal-content">
-								<div class = "buyTicketContainer">
-									<h1>Dance Party in KL</h1>
-									<p> Price ( RM #price)</p>
-									
-									<label><b>Number of Tickets</b></label>
-									<br>
-									<input name = "numTickets" type = "number" min = 0 style = "width: 50%;"/>
-									<br>
-									<hr>
-									<label style = "margin-left: 360px"><b>Total Price</b></label>
-									<p style = "margin-left: 360px">#price</p>
-									<div class = "clearfix">
-										<button type = "submit" class = "modalBtn submitBtn">Order</button>	
-									</div>
-								
-								</div>
-							</form>
-						</div>
+						<p><button class = "cardButton">Buy Now</button></p>
 					</div>
 				
 				</div>
 				<div class = "cardColumn">
-					<div class = "cardImage">
-						<img src = "eventLocation/img2.jpg" alt = "Putrajaya" style = "width: 60%">
-					</div>
-						
+					<img src = "eventLocation/img2.jpg" alt = "Putrajaya" style = "width: 60%">
 						<div class = "cardContainer">
-							<div class = "cardTitle">
-								<p class = "cardTitle">Food Trucks in Putrajaya</p>
-							</div>
-							<hr>
+							<h2>Food Trucks in Putrajaya</h2>
 							<p>Sat 13 Dec 2018</p>
 							<p>What's better than Food? Food in trucks!</p>
 							<p><button class = "cardButton">Buy Now</button></p>
 						</div>
 				</div>
 				<div class = "cardColumn">
-					<div class = "cardImage">
-						<img src = "eventLocation/img3.jpg" alt = "Singapore" style = "width: 60%">
-					</div>
-				
+				<img src = "eventLocation/img3.jpg" alt = "Singapore" style = "width: 60%">
 						<div class = "cardContainer">
-							<div class = "cardTitle"><p>Traffic Jam in Singapore</p></div>
-							<hr>
+							<h2>Traffic Jam in Singapore</h2>
 							<p>Sun 14 Dec 2018</p>
 							<p>What the fuck is this. WHAT THE FUCK IS THIS!</p>
 							<p><button class = "cardButton">Buy Now</button></p>
 						</div>
 				</div>
 				<div class = "cardColumn">
-					<div class = "cardImage">
-						<img src = "eventLocation/img3.jpg" alt = "Singapore" style = "width: 60%">
-					</div>
-				
+				<img src = "eventLocation/img3.jpg" alt = "Singapore" style = "width: 60%">
 						<div class = "cardContainer">
-							<div class = "cardTitle"><p>Traffic Jam in Singapore</p></div>
-							<hr>
+							<h2>Traffic Jam in Singapore</h2>
 							<p>Sun 14 Dec 2018</p>
 							<p>What the fuck is this. WHAT THE FUCK IS THIS!</p>
 							<p><button class = "cardButton">Buy Now</button></p>
 						</div>
 				</div>
+			
 			</div>
 		
 		</div>
-		
 		<div class = "footer">
 			<div class = "row">
 				<div class = "column"> Company
@@ -212,9 +164,10 @@
 						<li><a href="#" class="fa fa-twitter"></a></li>
 						<li><a href="#" class="fa fa-instagram"></a></li>
 					</ul>
-				</div>	
+				</div>
 			</div>
 		</div>
+	</div>
 	</body>
 
 
