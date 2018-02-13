@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	
+		<link rel="stylesheet" type="text/css" href="MainPageStyle.css"/>
+		
+		<script>
+			var data = [];
+			function getData(){
+				
+			}
+			function createCards(){
+				var card = document.createElement("div");
+				card.className = "cardColumn";
+				
+				var cardImage = document.createElement("div");
+				cardImage.className = "cardImage";
+				
+				var cardContainer = document.createElement("div");
+				cardContainer.className = "cardContainer"
+				
+				var cardTitle = document.createElement("div");
+				
+				<!-- var cardTitleText = document.createTextNode(); -->
+				cardTitle.className = "cardTitle";
+				
+				cardContainer.appendChild(document.createElement("hr"));
+				
+				var button = document.createElement("button");
+				var buttonTxt = document.createTextNode("Buy Now");
+				button.appendChild(buttonTxt);
+				button.className = "cardButton";
+				
+				card.appendChild(cardImage);
+				card.appendChild(cardContainer);
+				cardContainer.appendChild(cardTitle);
+				cardContainer.appendChild(button);
+				
+				return card;
+			}
+		
+		</script>
+	</head>
+
+	<body>
+		<script>
+			for (x=0; x < 9; x++){
+				document.body.appendChild(createCards());
+			}
+			getData();
+		</script>
+		
+		<?php 
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			$database = "tickety";
+			
+			$link = mysqli_connect($server, $user, $password, $database);
+			
+			$sqlcommand = "SELECT * FROM EVENTS";
+			$results = mysqli_query($link, $sqlcommand);
+			
+			while ($row = mysqli_fetch_assoc($results)){
+				echo $row['eventID'];
+			}
+		?>
+		
+		<div class = "buyTickets">
+			<h1 style = "text-align: center;">Tickets Available</h1>
+			<div class = "rowTicket">	
+				<div class = "cardColumn">
+					<div class = "cardImage">
+						<img class = "imageCard" src = "eventLocation/img1.jpg" alt = "KL" style = "width: 60%">
+					</div>
+					
+					<div class = "cardContainer">
+						<div class = "cardTitle">
+							<!-- <p>Dance Party in KL</p> -->
+							<p>
+								<script>
+									document.write(dance);
+								</script>
+							</p>	
+							
+						</div>
+						<hr>
+						<p>Fri 12 Dec 2018</p>
+						<p>The dance revolution that you need!</p>
+						<p>
+						<button onclick = "document.getElementById('ticket01').style.display='block'" class = "cardButton">Buy Now</button>
+						</p>
+						
+						<div id = "ticket01" class = "modal">
+							<span onclick="document.getElementById('ticket01').style.display='none'" class="close" title="Close Modal">&#10006;</span>
+							<form action = "" class = "modal-content">
+								<div class = "buyTicketContainer">
+									<h1>Dance Party in KL</h1>
+									<p> Price ( RM #price)</p>
+									
+									<label><b>Number of Tickets</b></label>
+									<br>
+									<input name = "numTickets" type = "number" min = 0 style = "width: 50%;"/>
+									<br>
+									<hr>
+									<label style = "margin-left: 360px"><b>Total Price</b></label>
+									<p style = "margin-left: 360px">#price</p>
+									<div class = "clearfix">
+										<button type = "submit" class = "modalBtn submitBtn">Order</button>	
+									</div>
+								
+								</div>
+							</form>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		
+		</div>
+	
+	
+	</body>
+
+
+</html>
