@@ -1,0 +1,245 @@
+body {
+	min-height: 100%;
+	font-family: Montserrat;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: darkgray;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#container{
+	min-height: 100%;
+	position: relative;
+}
+
+
+
+.column {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.eventBox {
+	max-width: 100%;
+	max-height: 100%;
+	height: 2000px;
+	width: 100%;
+	position: relative;
+	top: 75px;
+	margin-bottom: 50px;
+}
+
+.eventCard {
+	background-color: white;
+	float: left;
+	width: 44%;
+	height: auto;
+	max-height: auto;
+	margin: 20px 20px 20px 20px;
+	box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+.eventImage{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background-color: skyblue;
+	overflow: hidden;
+	margin: auto;
+}
+
+/* .eventDate:hover{ */
+  /* background-color: rgb(18, 176, 41); */
+  /* box-shadow:inset 0 0 0 99999px rgba(255,255,255,0.2); */
+/* } */
+
+.eventImage img{
+	display: block;
+	position: absolute;
+	max-height: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	width: auto;
+	top: 0;
+}
+
+.eventTitle {
+	font-family: Roboto Condensed;
+	text-indent: 2%;
+	overflow: hidden;
+}
+
+.eventTitle a{
+	text-decoration: none;
+}
+
+.eventDate {
+	width: 100%;
+	height: 30px;
+	max-height: auto;
+	font-family: Supermercado One;
+	text-indent: 2%;
+}
+
+.eventDescription {
+	display: none;
+	z-index: 2;
+	margin: 2%;
+	text-align: left;
+	margin: 20px 20px 20px 20px;
+	background-color: white;
+	box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+.cardButton{
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	width: 120px;
+	height: 30px;
+	float: right;
+}
+
+.buyTicketContainer{
+	padding: 16px;
+
+}
+
+.modal{
+	display: none; 
+	position: fixed; 
+	z-index: 10000; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgba(71, 78, 93, 0.7);
+	padding-top: 50px;
+}
+
+.modal-content{
+	background-color: #fefefe;
+	margin: 5% auto 15% auto;
+	border: 1px solid #888;
+	width: 40%;
+}
+
+.close{
+	position: absolute;
+	right: 35px;
+	top: 15px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #f1f1f1;
+}
+
+.close:hover{
+	color: #2d2d2d;
+	cursor: pointer;
+}
+
+.modalBtn{
+	float: left;
+	width: 50%;
+	border: 0;
+	color: white;
+	padding: 15px;
+	margin-left: 360px;
+	background-color: black;
+}
+
+.modalBtn:active{
+	background-color: #f1f1f1;
+	color: black;
+}
+
+.footer {
+	min-height: 100%;
+	position: relative;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	clear: both;
+	background-color: #efefef;
+	height: 100%;
+}
+
+/* .footer { */
+	/* min-height: 100%; */
+	/* position: absolute; */
+	/* right: 0; */
+	/* bottom: 0; */
+	/* left: 0; */
+	/* clear: both; */
+	/* background-color: #efefef; */
+/* } */
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center; 
+}
+
+.fa-facebook {
+  color:black;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+}
+
+.fa-twitter {
+  color:black;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  
+}
+
+.fa-instagram {
+  color:black;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+@font-face {
+	font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+	font-family: 'Supermercado One', sans-serif;
+}
+
+@font-face {
+	font-family: 'Roboto Condensed', sans-serif;
+}
