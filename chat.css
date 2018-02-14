@@ -1,0 +1,42 @@
+/* chat.css */
+
+body {
+	margin           : auto;
+	text-align       : center;
+}
+
+.footer {
+	background       : darkslategrey;
+	bottom           : 0;
+	height           : 50px;
+	position         : fixed;
+	text-align       : center;
+	width            : 100%;
+}
+
+input {
+	height           : 25px;
+	margin           : 10px;
+}
+
+input[type="text"] {
+	border           : none;
+	outline          : none;
+	padding-left     : 10px;
+	width            : 65%;
+}
+
+input[type="submit"] {
+	background-color : dodgerblue;
+	border           : none;
+	color            : white;
+	height           : 27px;
+	width            : 75px;
+}
+
+#chatOutput {
+	text-align       : left;
+	width            : 50%;
+	height           : 500px;
+	border           : 1px solid black;
+}
