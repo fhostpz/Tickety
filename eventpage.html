@@ -60,6 +60,31 @@
 		    background-color: #45a049;
 		}
 
+		body                      { font-family     : tahoma, helvetica, sans-serif;
+                            margin          : 0; }
+		.topbar                   { overflow        : hidden;
+                            background-color: dodgerblue;
+                            position        : fixed;
+                            top             : 0;
+                            width           : 100%;
+                            z-index         : 4; }
+		.topbar a                 { float           : left;
+                            display         : block;
+                            color           : dodgerblue;
+                            text-align      : center;
+                            padding         : 14px 16px;
+                            text-decoration : none;
+                            color           : black;
+                            font-size       : 20px; }
+		.topbar a:hover           { background      : RoyalBLue;
+                            color           : black; }
+		.topSearch                { position        : fixed;
+                            top             : 15px;
+                            left            : 1400px;
+                            width           : 250px;
+                            height          : auto; }
+		.topbarRight              { float           : right; }
+
 
 		.textbox {
 		    border-radius: 5px;
@@ -84,37 +109,20 @@
 
   <body>
   	
-  	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>                        
-	      </button>
-	      <a class="navbar-brand" href="#">E-Van</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Home</a></li>
-	        <li class="dropdown">
-	          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Event<span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Run like Naruto</a></li>
-	            <li><a href="#">Scream like Goku</a></li>
-	            <li><a href="#">Come man talk.</a></li>
-	          </ul>
-	        </li>
-	        <li><a href="#">Support</a></li>
-	        <li><a href="#">About</a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
+  	<div class = "topbar">
+      <a href = "#logo">Logo</a>
+      <a href = "">Events</a>
+      <a href = "">About Us</a>
+      
+      <div class = "topSearch">
+        <input type = "text" name = "search" placeholder = "Search...">
+      </div>
+      
+      <div class = "topbarRight">
+        <a href = "http://localhost/tickety/login.html">Login</a>
+        <a href = "http://localhost/tickety/signup.html">Sign Up</a>
+      </div>
+    </div>
 
 
 	<div class = "container" style="margin-top:75px">
@@ -168,7 +176,7 @@
     
     <br>
 	  <form action="eventpage.php" method="post">
-	    <label for="event">Event Name</label><span class="error">* <?php echo $nameErr;?></span>
+	    <label for="event">Event Name</label>
 	    <input type="text" name="event" id="event" placeholder="Give it a short distinct name">
 	    
 
