@@ -1,9 +1,10 @@
+
 body {
 	min-height: 100%;
-	font-family: Montserrat;
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-family: 'Montserrat', sans-serif;
 }
 
 img {
@@ -17,49 +18,11 @@ img {
 	position: relative;
 }
 
+.push{
+	
+}
 .parent{
 	width: 100px;
-}
-
-.topbar {
-	overflow: hidden;
-	background-color: #33ccff;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 4;
-}
-
-.topbar a {
-	float: left;
-	display: block;
-	color: #f2f2f2;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	color: black;
-	font-size: 20px;
-	
-}
-
-.topbar a:hover {
-	background: #0099cc;
-	color: black;
-		
-}
-
-.topbarRight {
-	float: right;
-	
-}
-
-.topSearch {
-	position: fixed;
-	top: 15px;
-	left: 1400px;
-	/* background-color: black; */
-	width: 250px;
-	height: auto; 
 }
 
 .slideshowBox{
@@ -108,9 +71,7 @@ img {
 }
 
 .next {
-	/* margin: auto 0; */
-	left: 95%;
-	/* top: 17px; */
+	left: 97%;
 } 
 
 .prev {
@@ -145,9 +106,11 @@ img {
 
 .buyTickets{
 	/* background-color: green; */
-	height: 800px;
+	/* height: 400px; */
 	min-height: 100%;
 	width: 100%;
+	clear: both;
+	overflow: hidden;
 }
 
 .cardColumn{
@@ -157,6 +120,7 @@ img {
 	height: 450px;
 	margin: 20px 20px 20px 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .cardContainer{
@@ -247,7 +211,40 @@ img {
 	left: 0;
 	clear: both;
 	background-color: #efefef;
+	height: 100%;
 }
+
+@media only screen and (max-width: 800px){
+	.footer {
+		min-height: 100%;
+		position: relative;
+		right: 0;
+		bottom: -1250px;
+		left: 0;
+		clear: both;
+		/* background-color: red; */
+		height: 100%;
+	}
+	.next {
+	left: 91%;
+	}	 
+}
+
+@media only screen and (min-width: 803px) and (max-width: 1500px ){
+	.footer {
+		min-height: 100%;
+		position: relative; 
+		right: 0; 
+		bottom: -270px; 
+		left: 0; 
+		clear: both;
+		/* background-color: green;  */
+		height: 100%;
+	}
+	.next {
+	left: 96%;
+	}
+} 
 
 .column {
 	float: left;
@@ -265,8 +262,8 @@ img {
 	background-color: #d8d2d2;
 	position: absolute;
 	width: 100%;
-	/* left: 180px; */
-	/* box-shadow: inset 0 0 10px #000000; */
+	clear: both;
+
 }
 
 .cardImage{
