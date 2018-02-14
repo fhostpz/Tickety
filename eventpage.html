@@ -177,25 +177,25 @@
     <br>
 	  <form action="eventpage.php" method="post">
 	    <label for="event">Event Name</label>
-	    <input type="text" name="event" id="event" placeholder="Give it a short distinct name">
+	    <input type="text" name="event" id="event" placeholder="Give it a short distinct name" required>
 	    
 
 	    <label for="location">Location</label>
-	    <input type="text"  name="location" id="location" placeholder="example: Cyberjaya, Selangor">
+	    <input type="text"  name="location" id="location" placeholder="example: Cyberjaya, Selangor, Malaysia" required>
 
-	    <label for="country">Country</label>
-	    <select  name="country" id = "country">
-	      <option value="malaysia">Malaysia</option>
-	      <option value="australia">Singapore</option>
-	      <option value="canada">Thailand</option>
-	      <option value="usa">Indonesia</option>
+	    <label for="Region">Region</label>
+	    <select  name="region" id = "region" required>
+	      <option value="Asia">Asia</option>
+	      <option value="Middle Eastern">Middle Eastern</option>
+	      <option value="Europe">Europe</option>
+	      <option value="America">America</option>
 	    </select>
 
 	    <label for="start">Start</label><br>
-  		<input type="datetime-local" name="start_datetime" id="start_datetime"><br>
+  		<input type="datetime-local" name="start_datetime" id="start_datetime" required><br>
 
   		<label for="end">End</label><br>
-  		<input type="datetime-local" name="end_datetime" id="end_datetime" ><br>
+  		<input type="datetime-local" name="end_datetime" id="end_datetime" required><br>
 
 
 	    <label for="description">Description</label>
