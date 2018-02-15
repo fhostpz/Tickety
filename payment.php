@@ -26,7 +26,7 @@
 			echo "Selected tickety database. <br>";
 	}
 	else {
-		//echo "Selected my_db database. <br>";
+		//echo "Selected my_db e database. <br>";
 	}
 	
 	$userID = $_SESSION['userID'];

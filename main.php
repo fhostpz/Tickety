@@ -15,7 +15,6 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" >
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		
-		
 		<?php
 			$server   = "localhost";
 			$user     = "root";
@@ -23,23 +22,138 @@
 			$database = "tickety";
 			
 			// $link = mysqli_connect($server, $user, $password, $database);
-			$conn = mysqli_connect($server, $user, $password, $database);
+			$link = mysqli_connect($server, $user, $password);
 			
-			if ($conn -> connect_error){
-				die("Connection Failed: ".$conn->connect_error);
+			$db_selected = mysqli_select_db($link, "tickety");
+			
+			if(!$db_selected) {
+				$sql = "CREATE DATABASE tickety";
+				mysqli_query($link, $sql);
+				$db_selected = mysqli_select_db($link,"tickety");
+				if($db_selected){
+					echo "Selected tickety database. <br>";
+				}
+				else {
+					//echo "Selected my_db database. <br>";
+				}
+			}			
+			
+			$query = "SELECT ID FROM user";
+			$result = mysqli_query($link, $query);
+			
+			if(empty($result)) {
+               $sql = "CREATE TABLE IF NOT EXISTS `user` (
+				  `userID` int(11) NOT NULL AUTO_INCREMENT,
+				  `name` varchar(32) NOT NULL,
+				  `password` varchar(32) NOT NULL,
+				  `email` varchar(32) NOT NULL,
+				  PRIMARY KEY (`userID`)
+				) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;";
+				mysqli_query($link, $sql);
+				
+				$sql = "
+					INSERT INTO `user` (`userID`, `name`, `password`, `email`) VALUES
+					(115, 'Megat Ilham', '12345', 'megat@ilham.com'),
+					(116, 'John Smith', '12345', 'john@smith.com'),
+					(117, 'Rock Lee', '12345', 'rock@lee.com'),
+					(118, 'Rin', '12345', 'rin@ingan');
+				";
+				mysqli_query($link, $sql);
+			}
+			
+			$query = "SELECT ID FROM events";
+			$result = mysqli_query($link, $query);
+			
+			if (empty($result)) {
+				$sql = "CREATE TABLE IF NOT EXISTS `events` (
+				  `eventID` int(3) NOT NULL AUTO_INCREMENT,
+				  `event_title` varchar(12) NOT NULL,
+				  `event_description` varchar(265) NOT NULL,
+				  `event_date` date NOT NULL,
+				  `event_price` int(4) NOT NULL,
+				  `eventParticipants` int(5) DEFAULT NULL,
+				  `event_url` varchar(32) DEFAULT NULL,
+				  `event_alt` varchar(32) DEFAULT NULL,
+				  `userID` int(11) NOT NULL,
+				  PRIMARY KEY (`eventID`)
+				) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1";
+				mysqli_query($link, $sql);
+				
+				$sql = "
+					INSERT INTO `events` (`eventID`, `event_title`, `event_description`, `event_date`, `event_price`, `eventParticipants`, `event_url`, `event_alt`, `userID`) VALUES
+					(1, 'Dance Party', 'The dance revolution that you need!', '2018-01-24', 200, 0, 'eventImage/festival', '', 115),
+					(3, 'Traffic Jam', 'What the fuck is this. WHAT THE FUCK IS THIS.', '2018-01-27', 300, 0, '', '', 115),
+					(4, 'LAN Party', 'Get your mouse out and lets get partying!', '2018-02-28', 10, 0, 'eventImage/disneyland', '', 115),
+					(5, 'Code Breaker', 'Hack into your Favorite Companies', '2018-02-24', 5000, 0, 'eventImage/presentation', '', 115),
+					(6, 'Gala Bois', 'What is this', '2018-02-26', 1, 0, 'eventImage/cheers', '', 115),
+					(7, 'The Bomb', 'It\'s the Bomb', '2018-02-28', 28, NULL, NULL, NULL, 115),
+					(8, 'Kill', 'The Kill', '2018-02-22', 200, NULL, NULL, NULL, 115),
+					(9, 'Fuck', 'weeqrweffa', '2018-02-28', 210, NULL, NULL, NULL, 115),
+					(10, 'What is THis', '', '2018-02-28', 200, NULL, NULL, NULL, 115),
+					(11, 'ASK', 'efwefwfa', '2018-02-27', 200, NULL, NULL, NULL, 115),
+					(12, 'HOw are', '', '2018-02-28', 2313131, NULL, NULL, NULL, 115),
+					(13, 'Creqat', 'wqeqwe', '2018-02-28', 289, NULL, NULL, NULL, 115);
+				";
+				mysqli_query($link, $sql);
+			}
+			
+			$query = "SELECT ID FROM participants_list";
+			$result = mysqli_query($link, $query);
+			
+			if (empty($result)) {
+				$sql = "CREATE TABLE IF NOT EXISTS `participants_list` (
+				  `purchase_id` int(11) NOT NULL AUTO_INCREMENT,
+				  `userID` int(32) NOT NULL,
+				  `eventID` int(32) NOT NULL,
+				  `noOfTickets` int(6) NOT NULL,
+				  PRIMARY KEY (`purchase_id`),
+				  KEY `eventID` (`eventID`),
+				  KEY `userID` (`userID`)
+				) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;";
+				mysqli_query($link, $sql);
+				
+				$sql = "
+					INSERT INTO `participants_list` (`purchase_id`, `userID`, `eventID`, `noOfTickets`) VALUES
+						(1, 115, 4, 1),
+						(2, 115, 6, 2),
+						(3, 116, 3, 32);
+				";
+				mysqli_query($link, $sql);
+				
+			}
+			
+			$query = "SELECT ID FROM credential";
+			$result = mysqli_query($link, $query);
+			
+			if (empty($result)) {
+				$sql = "CREATE TABLE IF NOT EXISTS `credential` (
+				  `email` varchar(32) NOT NULL,
+				  `password` int(11) NOT NULL,
+				  PRIMARY KEY (`email`)
+				) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+				mysqli_query($link, $sql);
+				
+			}
+			
+			
+			if ($link -> connect_error){
+				die("Connection Failed: ".$link->connect_error);
 			} else {
 				echo "Connection Successful ";
 			}
 			
-			$sql = "SELECT COUNT(*) FROM events";
+			$date_str = date("Y-m-d");
+			
+			if ($result = mysqli_query($link, "SELECT * FROM events WHERE event_date > '$date_str'")) {
+					$row_cnt = mysqli_num_rows($result);
 
-			$result = mysqli_query($conn, $sql);
-			$rs = mysqli_fetch_array($result);
-				
+					mysqli_free_result($result);
+				}
+
 			$sql = "SELECT eventID, event_title, event_description, event_date, event_price FROM events";
 		
-			$result2 = mysqli_query($conn, $sql);
-			while ($row = mysqli_fetch_assoc($result2)){
+			$result = mysqli_query($link, $sql);
+			while ($row = mysqli_fetch_assoc($result)){
 				$array[] = $row;
 			}
 			
@@ -142,7 +256,7 @@
 			<h1 style = "text-align: center;">Latest Events</h1>
 			<div class = "rowTicket">
 				<?php
-					for($x = 4; $x > -1; $x--){
+					for($x = $row_cnt; $x > $row_cnt-5; $x--){
 					echo "
 						<div class = 'cardColumn'>
 							<div class = 'cardImage'>
