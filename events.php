@@ -52,7 +52,7 @@
 
 	<body>
 		<div class = "topbar">
-			<a href="main.php">Logo</a>
+			<a href="main.php">Tickety</a>
 			<a href="events.php">Events</a>
 			
 			<div class = "topbarRight">
@@ -150,6 +150,10 @@
 								</div>
 							</div>
 						</a>
+						<form method = 'post' action = 'contact.php'>
+									<input type = 'submit' value = 'Contact Us'>
+									<input name = 'eventID' value='".$array[$x]['eventID']."' readonly>
+								</form>
 						<div class = 'eventDate'>
 							".$array[$x]['event_date']."
 							<button onclick = \"document.getElementsByName('".$array[$x]['eventID']."')[0].style.display='block'\" class = 'cardButton'>Buy Now</button>

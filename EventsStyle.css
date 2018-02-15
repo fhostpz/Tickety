@@ -3,7 +3,7 @@ body {
 	font-family: Montserrat;
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	max-height: 100%;
 	background-color: darkgray;
 }
 
@@ -50,6 +50,7 @@ img {
 	max-height: auto;
 	margin: 20px 20px 20px 20px;
 	box-shadow:0 0 20px rgba(0,0,0,0.8);
+	/* margin-bottom: 100px; */
 }
 
 .eventImage{

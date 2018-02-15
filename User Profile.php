@@ -21,10 +21,8 @@
 	
 	<body>
 		<div class = "topbar">
-			<a href="main.php">Logo</a>
-			<a href="events.php">Events</a>
-			<a href="">About Us</a>
-		
+			<a href="main.php">Tickety</a>
+			<a href="events.php">Events</a>	
 			
 			<div class = "topbarRight">
 				<a href="logout.php">Logout</a>
@@ -94,12 +92,18 @@
 						
 							<tr>
 								<td>
-									<a href="events.php">Organized Events</a> 
+									<a href="eventpage.html">Create An Event</a> 
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="attendee.php">Attendance List</a> 
 								</td>
 								<td align = "right">
 									<button type="submit" value="Save" class = "submit">Save</button>
 								</td>
 							</tr>
+
 						</form>
 					</table>';
 			?>

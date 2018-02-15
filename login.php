@@ -11,26 +11,9 @@
   $password = "";
   $database = "tickety";
   $link = mysqli_connect($server, $user, $password);
-  
-  //Establish a connection with the database, "tickety".
-  //If failed, try creating the database.
-  //If failed again, terminate.
-  $repeat = 0;
-  do {
-    $db_selected = mysqli_select_db($link, $database);
-  
-    if (!$db_selected) {
-      if ($repeat < 1) {
-        $sqlcommand = "CREATE DATABASE " . $database;
-        $result     = mysqli_query($link, $sqlcommand);
-        $repeat++;
-	  }
-	  else {
-        die ("Error, please contact the web administrator: ".mysqli_error($link));
-      }
-    }
-  } while (!$db_selected);
-  
+
+  $db_selected = mysqli_select_db($link, $database);
+    
   //Check for existing record.
   $sqlcommand = "SELECT * FROM user WHERE email = \"" . $user_email . "\"";
   $result     = mysqli_query($link, $sqlcommand);
