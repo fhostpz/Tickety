@@ -40,17 +40,19 @@
 	}
 	
 	$db_selected=mysqli_select_db($link,"tickety");
-	$result1 = mysqli_query($link,"SELECT event_title from events where userID ='".$_SESSION["userID"]."'");
 	
-	//$result2 = mysqli_query($link,"SELECT event.title, user.name, user.email from event, user where event.userId = user.userId AND user.userId='".$_SESSION["userId"]."'");
-	
+	$date_str = date("Y-m-d");
+	$result1 = mysqli_query($link,"SELECT event_title from events where userID ='".$_SESSION["userID"]."' AND event_date > '$date_str' ORDER BY event_date ASC");
 	
 	while($row1 = mysqli_fetch_array($result1))
 	{
 		$counter = 0;
 		echo "<p class = event>".$row1["event_title"]."</p>";
-		echo "<table border='1'>";
-		echo "<tr>";
+		echo "<table border='2'>";
+		echo "<col width = '50px'>";
+		echo "<col width = '350px'>";
+		echo "<col width = '350px'>";
+		echo "<tr style = 'background-color: lightblue'>";
 		echo "<th>No</th>
 		<th>Name</th>
 		<th>Email</th>";
