@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	// $_SESSION['userID'] = "1";
+	$_SESSION['userID'] = "115";
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +45,13 @@
 					// echo "Successfully connected to localhost.<br>";
 				}
 				
-				$db_selected = mysqli_select_db($con, "tickety");
+				$db_selected = mysqli_select_db($con, "try");
 				if(!$db_selected) {
-					$sql = "CREATE DATABASE tickety";
+					$sql = "CREATE DATABASE try";
 					mysqli_query($link, $sql);
-					$db_selected = mysqli_select_db($link,"tickety");
+					$db_selected = mysqli_select_db($link,"try");
 					if($db_selected)
-						echo "Selected tickety database. <br>";
+						echo "Selected try database. <br>";
 				}
 				else {
 					//echo "Selected my_db database. <br>";
@@ -92,15 +92,10 @@
 						
 							<tr>
 								<td>
-									<a href="events.php">Organized Events</a> 
+									<a href="attendee.php">Organized Events</a> 
 								</td>
 								<td align = "right">
 									<button type="submit" value="Save" class = "submit">Save</button>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="attendee.php">Attendance List</a> 
 								</td>
 							</tr>
 							<tr>
@@ -134,13 +129,13 @@
 						}
 						
 						//selecting database
-						$db_selected = mysqli_select_db($link, "tickety");
+						$db_selected = mysqli_select_db($link, "try");
 						if(!$db_selected) {
-							$sql = "CREATE DATABASE tickety";
+							$sql = "CREATE DATABASE try";
 							mysqli_query($link, $sql);
-							$db_selected = mysqli_select_db($link,"tickety");
+							$db_selected = mysqli_select_db($link,"try");
 							if($db_selected)
-								echo "Selected tickety database. <br>";
+								echo "Selected try database. <br>";
 						}
 						else {
 							//echo "Selected my_db database. <br>";
