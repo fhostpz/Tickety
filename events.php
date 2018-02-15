@@ -148,6 +148,8 @@
 								<div class='eventDescription' id ='".$array[$x]['eventID']."'>
 									".$array[$x]['event_description']."
 								</div>
+								
+								<p>Contact Us </p>
 							</div>
 						</a>
 						<div class = 'eventDate'>
