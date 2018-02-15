@@ -45,13 +45,13 @@
 					// echo "Successfully connected to localhost.<br>";
 				}
 				
-				$db_selected = mysqli_select_db($con, "try");
+				$db_selected = mysqli_select_db($con, "tickety");
 				if(!$db_selected) {
-					$sql = "CREATE DATABASE try";
+					$sql = "CREATE DATABASE tickety";
 					mysqli_query($link, $sql);
-					$db_selected = mysqli_select_db($link,"try");
+					$db_selected = mysqli_select_db($link,"tickety");
 					if($db_selected)
-						echo "Selected try database. <br>";
+						echo "Selected tickety database. <br>";
 				}
 				else {
 					//echo "Selected my_db database. <br>";
@@ -129,13 +129,13 @@
 						}
 						
 						//selecting database
-						$db_selected = mysqli_select_db($link, "try");
+						$db_selected = mysqli_select_db($link, "tickety");
 						if(!$db_selected) {
-							$sql = "CREATE DATABASE try";
+							$sql = "CREATE DATABASE tickety";
 							mysqli_query($link, $sql);
-							$db_selected = mysqli_select_db($link,"try");
+							$db_selected = mysqli_select_db($link,"tickety");
 							if($db_selected)
-								echo "Selected try database. <br>";
+								echo "Selected tickety database. <br>";
 						}
 						else {
 							//echo "Selected my_db database. <br>";
